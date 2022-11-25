@@ -105,14 +105,14 @@ jgz a -2
 
 ```
 
-The first four instructions set a to 1, add 2 to it, square it, and then set it to itself modulo 5, resulting in a value of 4.
+The first four instructions set a to `1`, add `2` to it, square it, and then set it to itself modulo `5`, resulting in a value of `4`.
 
     
-Then, a sound with frequency 4 (the value of a) is played.
+Then, a sound with frequency `4` (the value of a) is played.
 
-After that, a is set to 0, causing the subsequent rcv and jgz instructions to both be skipped (rcv because a is 0, and jgz because a is not greater than 0).
+After that, a is set to `0`, causing the subsequent rcv and jgz instructions to both be skipped (rcv because a is 0, and jgz because a is not greater than 0).
     
-Finally, a is set to 1, causing the next jgz instruction to activate, jumping back two instructions to another jump, which jumps again to the rcv, which ultimately triggers the recover operation.
+Finally, a is set to `1`, causing the next jgz instruction to activate, jumping back two instructions to another jump, which jumps again to the rcv, which ultimately triggers the recover operation.
 
 At the time the recover operation is executed, the frequency of the last sound played is `4`.
 
