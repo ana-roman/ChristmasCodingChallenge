@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/christmascodingchallenge
+christmascodingchallenge.so
+christmascodingchallenge.dylib
+christmascodingchallenge.dll
+christmascodingchallenge.a
+christmascodingchallenge.lib
+christmascodingchallenge-test-*
+*.exe
+*.o
+*.obj
+*.lst
