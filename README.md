@@ -20,7 +20,7 @@ For example:
 -   `())`  and  `))(`  both result in floor  `-1`  (the first basement level).
 -   `)))`  and  `)())())`  both result in floor  `-3`.
 
-To  _what floor_  do the instructions take Santa?
+***To  _what floor_  do the instructions take Santa?***
 
 The input if your challenge can be found in the file `input-1.txt`
 
@@ -55,7 +55,7 @@ UUUUD
 
 So, in this example, the home code is  `1985`.
 
-Your puzzle input is in the `input-2.txt` file. What is the code to Santa's house?
+***Your puzzle input is in the `input-2.txt` file. What is the code to Santa's house?***
 
 ### Challenge 3: The newspaper quiz 
 
@@ -63,8 +63,8 @@ After solving the puzzle left by Mrs. Claus, Santa was finally able to get into 
 
 The puzzle in the newspaper has to do with triangles. In theory, a valid triangle has the following property: the sum of any two sides has to be larger than the remaining side. For example, a triangle with the sides `5 10 25` is not a valid triangle, because `5 + 10` is not larger than `25`. 
 
-Santa looks at the list of side lenghts, and his task is to find how many of the triangles are valid ones. 
-Can you help Santa solve the challenge?
+***Santa looks at the list of side lenghts, and his task is to find how many of the triangles are valid ones. 
+Can you help Santa solve the challenge?***
 
 Your puzzle input is in the `input-3.txt` file.
 
@@ -120,6 +120,75 @@ At the time the recover operation is executed, the frequency of the last sound p
 The instructions can be found under `input-4.txt`:
 
 ***What is the value of the frequency Santa need to whistle to get his well deserved Chocolate drink?*** (the value of the most recently played sound the first time a rcv instruction is executed with a non-zero value) 
+
+
+
+### Challenge 5: Reindeer presents
+
+Santa is completely charged after his hot cup of coco. Good because it is time for the final and most difficult job on his Christmas todo list... cleaning the Reindeer pen. 
+
+As you enter the room, the scent becomes overwhelming, it is clear the pen hasn't been cleaned in a while. You start to wonder if you have brought enough plastic bags. 
+The floor can be divided into square meter tiles, here the tiles with a little christmas present are marked with a **(.)** while clean tiles are marked with a **(^)**.
+
+The pen covers **40 tiles in depth** and has the same width everywhere, so Santa cannot see the back of the room. 
+The reindeer are magical creatures however and their droppings follow a pattern, so Santa is able to calculate the amount of bags he needs. 
+
+**The type of tile (dirty or clean)** in each row is based on the types of the tiles in the same position, and to either side of that position, in the previous row. (If either side is off either end of the row, it counts as "clean" because reindeer droppings would just slide off.)
+
+For example, suppose you know the first row (with tiles marked by letters) and want to determine the next row (with tiles marked by numbers):
+
+```
+ABCDE
+12345
+```
+
+The type of tile 2 is based on the types of tiles A, B, and C; the type of tile 5 is based on tiles D, E, and an imaginary "dirty" tile. Let's call these three tiles from the previous row the left, center, and right tiles, respectively. Then, a new tile is dirty only in one of the following situations:
+
+   - Its left and center tiles are clean, but its right tile is not.
+   - Its center and right tiles are clean, but its left tile is not.
+   - Only its left tile is a clean.
+   - Only its right tile is a clean.
+
+In any other situation, the new tile is clean.
+
+Then, starting with the row `..^^.`, you can determine the next row by applying those rules to each new tile:
+
+- The leftmost character on the next row considers the left (nonexistent, so we assume "dirty"), center (the first ., which means "dirty"), and right (the second ., also "dirty") tiles on the previous row. Because all of the rules require a "clean" in at least one of the previous three tiles, the first tile on this new row is also dirty, `..`
+    
+- The second character on the next row considers its left (.), center (.), and right (^) tiles from the previous row. This matches the fourth rule: only the right tile is clean. Therefore, the next tile in this new row is a clean, `^.`
+    
+- The third character considers `.^^`, which matches the second "clean" rule: its center and right tiles are clean, but its left tile is not. Therefore, this tile is also a "clean", `^.`
+    
+- The last two characters in this new row match the first and third rules, respectively, and so they are both also clean, `^.`
+
+After these steps, we now know the next row of tiles in the room: .^^^^. Then, we continue on to the next row, using the same rules, and get `^^..^.` After determining two new rows, our map looks like this:
+
+```
+..^^.
+.^^^^
+^^..^
+```
+
+Here's a larger example with ten tiles per row and ten rows:
+
+```
+.^^.^.^^^^
+^^^...^..^
+^.^^.^.^^.
+..^^...^^^
+.^^^^.^^.^
+^^..^.^^..
+^^^^..^^^.
+^..^^^^.^^
+.^^^..^.^^
+^^.^^^..^^
+```
+
+In ten rows, this larger example has 38 clean tiles.
+
+
+***Starting with the map in your puzzle input, in a total of 40 rows (including the starting row), how many bags does santa need? (You estimate you need one bag for one tile)***
+
 
 
 
