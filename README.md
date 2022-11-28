@@ -137,8 +137,10 @@ The reindeer are magical creatures however and their droppings follow a pattern,
 
 For example, suppose you know the first row (with tiles marked by letters) and want to determine the next row (with tiles marked by numbers):
 
+```
 ABCDE
 12345
+```
 
 The type of tile 2 is based on the types of tiles A, B, and C; the type of tile 5 is based on tiles D, E, and an imaginary "dirty" tile. Let's call these three tiles from the previous row the left, center, and right tiles, respectively. Then, a new tile is dirty only in one of the following situations:
 
