@@ -135,7 +135,7 @@ Thankfully, he has his helpers on speed-dial, and they can quickly deliver some 
 Santa approximates that there are 40 rows of houses in front of him.
 
 Santa only delivers presents to children who have been nice, and not to those who have been naughty.   
-The houses of nice children have been martked with a dot `(.)`, and the naughty ones with an arrow `(^)`.  
+The houses of nice children have been marked with a dot `(.)`, and the naughty ones with an arrow `(^)`.  
 The houses in front of Santa seem to follow some kind of pattern: in a row of houses, you can determine if the children in the house have been naughty or nice, based on the houses from the previous row! We will call those houses simply naughty or nice.
 
 
