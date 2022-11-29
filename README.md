@@ -123,17 +123,21 @@ The instructions can be found under `input-4.txt`:
 
 
 
-### Challenge 5: Reindeer presents
+### Challenge 5: Reindeer and presents
 
-Santa is completely charged after his hot cup of coco. Good because it is time for the final and most difficult job on his Christmas todo list... cleaning the Reindeer pen. 
+Santa is completely charged after his hot cup of coco. Good, because it is time for the final and most difficult job on his Christmas todo list... delivering the presents.
 
-As you enter the room, the scent becomes overwhelming, it is clear the pen hasn't been cleaned in a while. You start to wonder if you have brought enough plastic bags. 
-The floor can be divided into square meter tiles, here the tiles with a little christmas present are marked with a **(.)** while clean tiles are marked with a **(^)**.
+At the end of the night, santa takes a short break right before the last city he has to deliver presents to: Groningen. But he noticed something: he ran out of treats for his reindeer! Which is not great, because the raindeer will not fly unless he gives them treats. 
 
-The pen covers **40 tiles in depth** and has the same width everywhere, so Santa cannot see the back of the room. 
-The reindeer are magical creatures however and their droppings follow a pattern, so Santa is able to calculate the amount of bags he needs. 
+Thankfully, he has his helpers on speed-dial, and they can quickly deliver some treats. But you need to figure out how many houses there are left, because for each trip, the raindeer require one treat. Spoiled, right? 
 
-**The type of tile (dirty or clean)** in each row is based on the types of the tiles in the same position, and to either side of that position, in the previous row. (If either side is off either end of the row, it counts as "clean" because reindeer droppings would just slide off.)
+
+Santa approximates that there are 40 rows of houses in front of him.
+
+Santa only delivers presents to children who have been nice, and not to those who have been naughty.   
+The houses of nice children have been martked with a dot `(.)`, and the naughty ones with an arrow `(^)`.  
+The houses in front of Santa seem to follow some kind of pattern: in a row of houses, you can determine if the children in the house have been naughty or nice, based on the houses from the previous row! We will call those houses simply naughty or nice.
+
 
 For example, suppose you know the first row (with tiles marked by letters) and want to determine the next row (with tiles marked by numbers):
 
@@ -142,26 +146,26 @@ ABCDE
 12345
 ```
 
-The type of tile 2 is based on the types of tiles A, B, and C; the type of tile 5 is based on tiles D, E, and an imaginary "dirty" tile. Let's call these three tiles from the previous row the left, center, and right tiles, respectively. Then, a new tile is dirty only in one of the following situations:
+The type of tile 2 is based on the types of tiles A, B, and C; the type of tile 5 is based on tiles D, E, and an imaginary "nice" tile. Let's call these three tiles from the previous row the left, center, and right tiles, respectively. Then, a new tile is *naughty* only in one of the following situations:
 
-   - Its left and center tiles are clean, but its right tile is not.
-   - Its center and right tiles are clean, but its left tile is not.
-   - Only its left tile is a clean.
-   - Only its right tile is a clean.
+   - Its left and center houses are naughty, but its right house is not.
+   - Its center and right houses are naughty, but its left house is not.
+   - Only its left house is naughty.
+   - Only its right house is naugthy.
 
-In any other situation, the new tile is clean.
+In any other situation, the new house is nice.
 
-Then, starting with the row `..^^.`, you can determine the next row by applying those rules to each new tile:
+Then, starting with the row `..^^.`, you can determine the next row by applying those rules to each new house:
 
-- The leftmost character on the next row considers the left (nonexistent, so we assume "dirty"), center (the first ., which means "dirty"), and right (the second ., also "dirty") tiles on the previous row. Because all of the rules require a "clean" in at least one of the previous three tiles, the first tile on this new row is also dirty, `..`
+- The leftmost character on the next row considers the left (nonexistent, so we assume "nice"), center (the first `.`, which means "nice"), and right (the second `.`, also "nice") tiles on the previous row. Because all of the rules require a "nice" in at least one of the previous three tiles, the first tile on this new row is also nice, `.`
     
-- The second character on the next row considers its left (.), center (.), and right (^) tiles from the previous row. This matches the fourth rule: only the right tile is clean. Therefore, the next tile in this new row is a clean, `^.`
+- The second character on the next row considers its left (.), center (.), and right (^) tiles from the previous row. This matches the fourth rule: only the right house is naughty. Therefore, the new house in this row is naughty, `^.`
     
-- The third character considers `.^^`, which matches the second "clean" rule: its center and right tiles are clean, but its left tile is not. Therefore, this tile is also a "clean", `^.`
+- The third character considers `.^^`, which matches the second rule: its center and right tiles are naughty, but its left tile is not. Therefore, this tile is also naughty, `^`
     
-- The last two characters in this new row match the first and third rules, respectively, and so they are both also clean, `^.`
+- The last two characters in this new row match the first and third rules, respectively, and so they are both also naughty, `^.`
 
-After these steps, we now know the next row of tiles in the room: .^^^^. Then, we continue on to the next row, using the same rules, and get `^^..^.` After determining two new rows, our map looks like this:
+After these steps, we now know the next row of houses in the city: .^^^^. Then, we continue on to the next row of houses, using the same rules, and get `^^..^.` After determining two new rows, our map looks like this:
 
 ```
 ..^^.
@@ -184,11 +188,10 @@ Here's a larger example with ten tiles per row and ten rows:
 ^^.^^^..^^
 ```
 
-In ten rows, this larger example has 38 clean tiles.
+In ten rows, this larger example has 38 nice houses.
 
 
-***Starting with the map in your puzzle input, in a total of 40 rows (including the starting row), how many bags does santa need? (You estimate you need one bag for one tile)***
-
+Starting with the map in your puzzle input, in a total of 40 rows (including the starting row), how many treats does santa need?
 
 
 
