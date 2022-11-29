@@ -165,7 +165,7 @@ Then, starting with the row `..^^.`, you can determine the next row by applying 
     
 - The last two characters in this new row match the first and third rules, respectively, and so they are both also naughty, `^.`
 
-After these steps, we now know the next row of houses in the city: `.^^^^.` Then, we continue on to the next row of houses, using the same rules, and get `^^..^.` After determining two new rows, our map looks like this:
+After these steps, we now know the next row of houses in the city: `.^^^^`. Then, we continue on to the next row of houses, using the same rules, and get `^^..^`. After determining two new rows, our map looks like this:
 
 ```
 ..^^.
