@@ -191,7 +191,7 @@ Here's a larger example with ten tiles per row and ten rows:
 In ten rows, this larger example has 38 nice houses.
 
 
-Starting with the map in your puzzle input, in a total of 40 rows (including the starting row), how many treats does santa need?
+***Starting with the map in your puzzle input, in a total of 40 rows (including the starting row), how many treats does santa need?***
 
 
 
